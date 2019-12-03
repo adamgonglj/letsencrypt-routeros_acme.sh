@@ -3,7 +3,9 @@
 ## Please avoid space
 
 ROUTEROS_USER=admin
-ROUTEROS_HOST=10.0.254.254
+ROUTEROS_HOST=192.168.1.254
 ROUTEROS_SSH_PORT=22
 ROUTEROS_PRIVATE_KEY=/opt/letsencrypt-routeros/id_dsa
-DOMAIN=vpnserver.yourdomain.com
+DOMAIN=vpn.yourdomain.com
+# acme.sh home directory with certificates. Use only if you haven't --install acme.sh or variable will be overwritten
+#LE_WORKING_DIR="~/.acme.sh"
