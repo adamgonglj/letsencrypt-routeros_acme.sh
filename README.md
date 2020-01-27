@@ -1,6 +1,8 @@
 # Let's Encrypt for RouterOS / Mikrotik
 **Let's Encrypt certificates for RouterOS / Mikrotik issued by ACME.SH**
 
+![ ](https://keir.ru/lib/exe/fetch.php?media=external:le-acmesh-ros_640.png)
+
 ### How it works:
 * Script aimed to be a PostHook for acme.sh (https://github.com/Neilpang/acme.sh)
 * After acme.sh renew your certificates on Mikrotik device
