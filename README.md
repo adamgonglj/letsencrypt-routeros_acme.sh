@@ -19,7 +19,7 @@
 Download the repo to your system
 ```sh
 cd /opt
-git clone https://github.com/keir-ru/letsencrypt-routeros
+git clone https://github.com/dualmi/letsencrypt-routeros
 ```
 Edit the settings file and fill:
 ```sh
