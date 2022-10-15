@@ -3,7 +3,7 @@
 ## Please avoid space
 
 ROUTEROS_USER=admin
-ROUTEROS_HOST=192.168.1.254
+ROUTEROS_HOST=ros.onepve.online
 ROUTEROS_SSH_PORT=22
 ROUTEROS_PRIVATE_KEY=/$codelede/letsencrypt-routeros/id_dsa
 DOMAIN=vpn.yourdomain.com
