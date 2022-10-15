@@ -36,17 +36,17 @@ nano -w /opt/letsencrypt-routeros/letsencrypt-routeros.settings
 
 Change permissions:
 ```sh
-chmod a+x /opt/letsencrypt-routeros/letsencrypt-routeros.sh
+chmod a+x $codelede/letsencrypt-routeros_acme.sh/letsencrypt-routeros.sh
 ```
 Generate a keypair for your Linux user if you haven't done it before or ROUTEROS_PRIVATE_KEY was set to non-standart location
 *Make sure to leave the passphrase blank (-N "")*
 ```sh
-source /opt/letsencrypt-routeros/letsencrypt-routeros.settings
+source $codelede/letsencrypt-routeros_acme.sh/letsencrypt-routeros.settings
 ssh-keygen -t dsa -f $ROUTEROS_PRIVATE_KEY -N ""
 ```
 Send generated key to Mikrotik device
 ```sh
-source /opt/letsencrypt-routeros/letsencrypt-routeros.settings
+source $codelede/letsencrypt-routeros_acme.sh/letsencrypt-routeros.settings
 scp -P $ROUTEROS_SSH_PORT $ROUTEROS_PRIVATE_KEY.pub "$ROUTEROS_USER"@"$ROUTEROS_HOST":"id_dsa.pub" 
 ```
 
@@ -68,13 +68,13 @@ Login to your Mikrotik and use it's terminal for next two commands. Change usern
 ### acme.sh
 If you getting certificate for the first time and using --issue parameter to acme.sh use something like this:
 ```sh
-acme.sh --issue -d domain --post-hook="/opt/letsencrypt-routeros/letsencrypt-routeros.sh" <...your other command line parameters...>
+acme.sh --issue -d domain --post-hook="$codelede/letsencrypt-routeros_acme.sh/letsencrypt-routeros.sh" <...your other command line parameters...>
 ```
 ...or if you already have issued certificate you can add a post-hook in configuration file for yor domain.
 Config file placement depends on how you install acme.sh but it looks like $LE_WORKING_DIR/$DOMAIN/$DOMAIN.conf where $LE_WORKING_DIR is actual variable defined by acme.sh after --install command and $DOMAIN is your domain name.
 Open you domain config file and set post-hook:
 ```sh
-Le_PostHook='/opt/letsencrypt-routeros/letsencrypt-routeros.sh'
+Le_PostHook='$codelede/letsencrypt-routeros_acme.sh/letsencrypt-routeros.sh'
 ```
 
 ### Usage of the script
