@@ -18,12 +18,12 @@
 
 Download the repo to your system
 ```sh
-cd /opt
+cd $codelede
 git clone https://github.com/dualmi/letsencrypt-routeros
 ```
 Edit the settings file and fill:
 ```sh
-nano -w /opt/letsencrypt-routeros/letsencrypt-routeros.settings
+nano -w $codelede/letsencrypt-routeros_acme.sh/letsencrypt-routeros.settings
 ```
 | Variable Name | Value | Description |
 | ------ | ------ | ------ |
@@ -80,7 +80,7 @@ Le_PostHook='$codelede/letsencrypt-routeros_acme.sh/letsencrypt-routeros.sh'
 ### Usage of the script
 *To use it manualy from console to upload a certificates:*
 ```sh
-/opt/letsencrypt-routeros/letsencrypt-routeros.sh
+$codelede/letsencrypt-routeros_acme.sh/letsencrypt-routeros.sh
 ```
 *Otherwise it will be used within acme.sh*
 
