@@ -78,7 +78,7 @@ Le_PostHook='$codelede/letsencrypt-routeros_acme.sh/letsencrypt-routeros.sh'
 ```
 
 ### Usage of the script
-*To use it manualy from console to upload a certificates:*
+*To use it manually from console to upload a certificates:*
 ```sh
 $codelede/letsencrypt-routeros_acme.sh/letsencrypt-routeros.sh
 ```
