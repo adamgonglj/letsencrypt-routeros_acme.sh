@@ -31,7 +31,7 @@ $routeros /system resource print
 
 if [[ ! $? == 0 ]]; then
         echo -e "\nError in: $routeros"
-        echo "More info: https://wiki.mikrotik.com/wiki/Use_SSH_to_execute_commands_(DSA_key_login)"
+        echo "More info: https://wiki.mikrotik.com/wiki/Use_SSH_to_execute_commands_(RSA_key_login)"
         exit 1
 else
         echo -e "\nConnection to RouterOS Successful!\n" 
