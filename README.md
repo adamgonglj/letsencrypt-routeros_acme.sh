@@ -6,7 +6,7 @@
 ### How it works:
 * Script aimed to be a PostHook for acme.sh (https://github.com/Neilpang/acme.sh)
 * After acme.sh renew your certificates on Mikrotik device
-* The script connects to RouterOS / Mikrotik using DSA Key (without password or user input)
+* The script connects to RouterOS / Mikrotik using RSA Key (without password or user input)
 * Delete previous certificate files
 * Delete the previous certificate
 * Upload two new files: **Certificate** and **Key**
@@ -30,7 +30,7 @@ nano -w $codelede/letsencrypt-routeros_acme.sh/letsencrypt-routeros.settings
 | ROUTEROS_USER | admin | user with admin rights to connect to RouterOS |
 | ROUTEROS_HOST | 192.168.1.254 | RouterOS\Mikrotik IP |
 | ROUTEROS_SSH_PORT | 22 | RouterOS\Mikrotik PORT |
-| ROUTEROS_PRIVATE_KEY | /root/.ssh/id_dsa | Private Key to connect to RouterOS (usualy inside $HOME/.ssh catalog if you want to use your default key) |
+| ROUTEROS_PRIVATE_KEY | /root/.ssh/id_rsa | Private Key to connect to RouterOS (usualy inside $HOME/.ssh catalog if you want to use your default key) |
 | DOMAIN | vpn.mydomain.com | Use domain you issued with acme.sh |
 | LE_WORKING_DIR | ~/.acme.sh | #Commented by default# acme.sh home directory with certificates if you haven't use --install parameter to acme.sh |
 
@@ -47,7 +47,7 @@ ssh-keygen -t dsa -f $ROUTEROS_PRIVATE_KEY -N ""
 Send generated key to Mikrotik device
 ```sh
 source $codelede/letsencrypt-routeros_acme.sh/letsencrypt-routeros.settings
-scp -P $ROUTEROS_SSH_PORT $ROUTEROS_PRIVATE_KEY.pub "$ROUTEROS_USER"@"$ROUTEROS_HOST":"id_dsa.pub" 
+scp -P $ROUTEROS_SSH_PORT $ROUTEROS_PRIVATE_KEY.pub "$ROUTEROS_USER"@"$ROUTEROS_HOST":"id_rsa.pub" 
 ```
 
 ### Setup RouterOS / Mikrotik side
@@ -62,7 +62,7 @@ Login to your Mikrotik and use it's terminal for next two commands. Change usern
 /ip service enable ssh
 
 :put "Add to the user DSA Public Key"
-/user ssh-keys import user=admin public-key-file=id_dsa.pub
+/user ssh-keys import user=admin public-key-file=id_rsa.pub
 ```
 
 ### acme.sh
