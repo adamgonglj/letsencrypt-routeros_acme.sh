@@ -42,7 +42,7 @@ Generate a keypair for your Linux user if you haven't done it before or ROUTEROS
 *Make sure to leave the passphrase blank (-N "")*
 ```sh
 source $codelede/letsencrypt-routeros_acme.sh/letsencrypt-routeros.settings
-ssh-keygen -t dsa -f $ROUTEROS_PRIVATE_KEY -N ""
+ssh-keygen -t rsa -f $ROUTEROS_PRIVATE_KEY -N ""
 ```
 Send generated key to Mikrotik device
 ```sh
@@ -61,7 +61,7 @@ Login to your Mikrotik and use it's terminal for next two commands. Change usern
 :put "Enable SSH"
 /ip service enable ssh
 
-:put "Add to the user DSA Public Key"
+:put "Add to the user RSA Public Key"
 /user ssh-keys import user=admin public-key-file=id_rsa.pub
 ```
 
