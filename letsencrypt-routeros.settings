@@ -5,7 +5,7 @@
 ROUTEROS_USER=admin
 ROUTEROS_HOST=ros.onepve.online
 ROUTEROS_SSH_PORT=22
-ROUTEROS_PRIVATE_KEY=$codelede/letsencrypt-routeros_acme.sh/id_dsa
+ROUTEROS_PRIVATE_KEY=$codelede/letsencrypt-routeros_acme.sh/id_rsa
 DOMAIN=*.yourdomain.com
 # acme.sh home directory with certificates. Use only if you haven't --install acme.sh or variable will be overwritten
 #LE_WORKING_DIR="~/.acme.sh"
